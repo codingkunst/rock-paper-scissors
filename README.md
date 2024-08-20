@@ -1,7 +1,14 @@
 # Rock-Paper-Scissors Game
 
+## 🎬 프로젝트 소개
+AI를 이겨라!!! (가위-바위-보 편)
+
+---
+
 ## 🛠️ Skill
-![Skills](https://skillicons.dev/icons?i=react,vite,yarn)
+![Skills](https://skillicons.dev/icons?i=css,react,vite,yarn)
+
+---
 
 ## 📄 Git Commit Convention
 | 태그 이름 | 설명 |
