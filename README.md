@@ -2,18 +2,12 @@
 
 <img src='rps.png'>
 
----
-
 ## 📌 개요
 - AI를 이겨라!!
 - 간단한 가위-바위-보 게임
 
----
-
 ## 🛠️ Skill
 ![Skills](https://skillicons.dev/icons?i=tailwind,react,vite,yarn)
-
----
 
 ## 📄 Git Commit Convention
 | 태그 이름 | 설명 |
