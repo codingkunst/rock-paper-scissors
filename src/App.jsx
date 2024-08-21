@@ -19,19 +19,29 @@ const choice = {
 
 function App() {
   const [userSelect, setUserSelect] = useState(null);
+  const [computerSelect, setComputerSelect] = useState(null);
 
   const play = (userChoice) => {
     setUserSelect(choice[userChoice]);
+    let computerChoice = randomChoice();
+    setComputerSelect(computerChoice);
+  };
+
+  const randomChoice = () => {
+    let itemArray = Object.keys(choice);
+    let randonItem = Math.floor(Math.random() * 3);
+    let final = itemArray[randonItem];
+    return choice[final];
   };
 
   return (
     <div>
-      <div className="main">
+      <div className="flex justify-center">
         <Box title="나" item={userSelect} />
-        {/* <Box title="AI" /> */}
+        <Box title="AI" item={computerSelect} />
       </div>
 
-      <div className="main">
+      <div className="flex justify-center">
         <button onClick={() => play("scissors")}>가위</button>
         <button onClick={() => play("rock")}>바위</button>
         <button onClick={() => play("paper")}>보</button>
