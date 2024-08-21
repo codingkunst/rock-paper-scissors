@@ -7,7 +7,7 @@
 ---
 
 ## 🛠️ Skill
-![Skills](https://skillicons.dev/icons?i=css,react,vite,yarn,tailwind)
+![Skills](https://skillicons.dev/icons?i=react,vite,yarn,tailwind)
 
 ---
 
