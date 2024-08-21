@@ -1,5 +1,7 @@
 # 🎬 프로젝트 : Rock-Paper-Scissors Game
 
+<img src='rps.png'>
+
 ## 📌 개요
 - AI를 이겨라!!
 - 간단한 가위-바위-보 게임
