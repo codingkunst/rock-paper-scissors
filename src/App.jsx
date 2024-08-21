@@ -18,33 +18,48 @@ const choice = {
 };
 
 function App() {
-  const [userSelect, setUserSelect] = useState(null);
-  const [computerSelect, setComputerSelect] = useState(null);
+  const [userSelect, setUserSelect] = useState(null); // 유저 선택
+  const [computerSelect, setComputerSelect] = useState(null); // 컴퓨터 선택
+  const [result, setResult] = useState(""); // 게임 결과
 
   const play = (userChoice) => {
     setUserSelect(choice[userChoice]);
     let computerChoice = randomChoice();
     setComputerSelect(computerChoice);
+
+    setResult(judgement(choice[userChoice], computerChoice));
   };
 
   const randomChoice = () => {
     let itemArray = Object.keys(choice);
-    let randonItem = Math.floor(Math.random() * 3);
+    let randonItem = Math.floor(Math.random() * itemArray.length);
     let final = itemArray[randonItem];
     return choice[final];
   };
 
+  const judgement = (user, computer) => {
+    if (user.name === computer.name) {
+      return "👿 무승부";
+    } else if (user.name === 'rock') {
+      return computer.name === 'scissors' ? '🤪 WIN' : '😭 LOSE';
+    } else if (user.name === 'paper') {
+      return computer.name === 'rock' ? '🤪 WIN' : '😭 LOSE';
+    } else if (user.name === 'scissors') {
+      return computer.name === 'paper' ? '🤪 WIN' : '😭 LOSE';
+    }
+  };
+
   return (
     <div>
-      <div className="flex justify-center">
-        <Box title="나" item={userSelect} />
-        <Box title="AI" item={computerSelect} />
+      <div className="flex justify-center m-5">
+        <Box title="PLAYER" item={userSelect} result={result} />
+        <Box title="AI" item={computerSelect} result={result} />
       </div>
 
-      <div className="flex justify-center">
-        <button onClick={() => play("scissors")}>가위</button>
-        <button onClick={() => play("rock")}>바위</button>
-        <button onClick={() => play("paper")}>보</button>
+      <div className="flex justify-center m-5">
+        <button className="rounded border border-solid bg-violet-400 p-2.5 m-2.5 w-16 h-11" onClick={() => play("scissors")}>가위</button>
+        <button className="rounded border border-solid bg-violet-400 p-2.5 m-2.5 w-16 h-11" onClick={() => play("rock")}>바위</button>
+        <button className="rounded border border-solid bg-violet-400 p-2.5 m-2.5 w-16 h-11" onClick={() => play("paper")}>보</button>
       </div>
     </div>
   );
